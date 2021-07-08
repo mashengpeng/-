@@ -6,47 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service
-public class DepartmentService {
 
-    @Autowired
-    private DepartmentMapper departmentMapper;
 
-    public List<Department> getDepartments(){
+public interface DepartmentService {
 
-        return departmentMapper.getDepartments();
-    }
+    public List<Department> getDepartments();
 
-    public  Department getDepartment(int id){
+    public Department getDepartment(int id);
 
-        return departmentMapper.getDepartment(id);
-    }
+    public List<Department> insert(int id, String departmentName);
 
-    public List<Department> insert(int id, String departmentName){
+    public List<Department> insertWithName(String departmentName);
 
-        departmentMapper.insert(new Department(id,departmentName));
+    public List<Department> delete(Integer id);
 
-        return departmentMapper.getDepartments();
-    }
+    public List<Department> deleteAll();
 
-    public List<Department> insertWithName(String departmentName){
-
-        departmentMapper.insertWithName(departmentName);
-
-        return departmentMapper.getDepartments();
-    }
-
-    public  List<Department> delete(Integer id){
-
-        departmentMapper.delete(id);
-
-        return departmentMapper.getDepartments();
-    }
-
-    public  List<Department> deleteAll(){
-
-        departmentMapper.deleteAll();
-
-        return departmentMapper.getDepartments();
-    }
 }

@@ -3,6 +3,7 @@ package com.example.msp.controller;
 import com.example.msp.mapper.DepartmentMapper;
 import com.example.msp.pojo.Department;
 import com.example.msp.service.DepartmentService;
+import com.example.msp.service.impl.DepartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ import java.util.List;
 public class DepartmentController {
 
     @Autowired
-    private DepartmentService departmentService;
+    private DepartmentServiceImpl departmentService;
 
     // 查询全部部门
     @GetMapping("/getDepartments")
