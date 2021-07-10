@@ -17,5 +17,6 @@ public class MailController {
     public String sendmail(){
         mailService.sendSimpleMail("1360311705@qq.com","test","test");
         return "已发送";
+
     }
 }

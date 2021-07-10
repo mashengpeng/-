@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface DepartmentMapper {
 
+    @Select("select * from department")
     List<Department> getDepartments();
 
     Department getDepartment(Integer id);

@@ -14,16 +14,20 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentMapper departmentMapper;
 
+    @Override
     public List<Department> getDepartments(){
 
         return departmentMapper.getDepartments();
+
     }
 
+    @Override
     public  Department getDepartment(int id){
 
         return departmentMapper.getDepartment(id);
     }
 
+    @Override
     public List<Department> insert(int id, String departmentName){
 
         departmentMapper.insert(new Department(id,departmentName));
@@ -31,6 +35,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentMapper.getDepartments();
     }
 
+    @Override
     public List<Department> insertWithName(String departmentName){
 
         departmentMapper.insertWithName(departmentName);
@@ -38,6 +43,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentMapper.getDepartments();
     }
 
+    @Override
     public  List<Department> delete(Integer id){
 
         departmentMapper.delete(id);
@@ -45,6 +51,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentMapper.getDepartments();
     }
 
+    @Override
     public  List<Department> deleteAll(){
 
         departmentMapper.deleteAll();

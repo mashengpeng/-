@@ -5,9 +5,9 @@
 
 <mapper namespace="com.example.msp.mapper.DepartmentMapper">
 
-    <select id="getDepartments" resultType="Department">
-        select * from department;
-    </select>
+<!--    <select id="getDepartments" resultType="Department">-->
+<!--        select * from department;-->
+<!--    </select>-->
 
     <select id="getDepartment" resultType="Department" parameterType="int">
         select * from department where id = #{id};
