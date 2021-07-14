@@ -1,4 +1,4 @@
-package com.example.msp.pojo;
+package com.msp.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

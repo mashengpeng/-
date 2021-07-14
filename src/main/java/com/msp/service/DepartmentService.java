@@ -1,9 +1,7 @@
-package com.example.msp.service;
+package com.msp.service;
 
-import com.example.msp.mapper.DepartmentMapper;
-import com.example.msp.pojo.Department;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.msp.pojo.Department;
+
 import java.util.List;
 
 

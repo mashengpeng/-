@@ -1,4 +1,4 @@
-package com.example.msp.service;
+package com.msp.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

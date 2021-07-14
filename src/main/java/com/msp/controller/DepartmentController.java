@@ -1,9 +1,7 @@
-package com.example.msp.controller;
+package com.msp.controller;
 
-import com.example.msp.mapper.DepartmentMapper;
-import com.example.msp.pojo.Department;
-import com.example.msp.service.DepartmentService;
-import com.example.msp.service.impl.DepartmentServiceImpl;
+import com.msp.pojo.Department;
+import com.msp.service.impl.DepartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

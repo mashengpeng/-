@@ -1,6 +1,6 @@
-package com.example.msp.mapper;
+package com.msp.mapper;
 
-import com.example.msp.pojo.Department;
+import com.msp.pojo.Department;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
