@@ -1,33 +1,61 @@
+
+
+
 spring:
   datasource:
     username: root
-    password: 123456
+    password: 1qazzxcvbnm~
     #?serverTimezone=UTC解决时区的报错
-    url: jdbc:mysql://localhost:3306/mysql?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/msp?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
     #Spring Boot 默认是不注入这些属性值的，需要自己绑定
     #druid 数据源专有配置
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
+
+    #    initialSize: 5
+    #    minIdle: 5
+    #    maxActive: 20
+    #    maxWait: 60000
+    #    timeBetweenEvictionRunsMillis: 60000
+    #    minEvictableIdleTimeMillis: 300000
+    #    validationQuery: SELECT 1 FROM DUAL
+    #    testWhileIdle: true
+    #    testOnBorrow: false
+    #    testOnReturn: false
+    #    poolPreparedStatements: true
 
     #配置监控统计拦截的filters，stat:监控统计、log4j：日志记录、wall：防御sql注入
     #如果允许时报错  java.lang.ClassNotFoundException: org.apache.log4j.Priority
     #则导入 log4j 依赖即可，Maven 地址：https://mvnrepository.com/artifact/log4j/log4j
-    filters: stat,wall,log4j
-    maxPoolPreparedStatementPerConnectionSize: 20
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  #    filters: stat,wall,log4j
+  #    maxPoolPreparedStatementPerConnectionSize: 20
+  #    useGlobalDataSourceStat: true
+  #    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+  #redis相关配置
+  redis:
+    database: 5
+    # 配置redis的主机地址，需要修改成自己的
+    host: 121.5.6.107
+    port: 6379
+    password: 1qazzxcvbnm~
+    timeout: 5000
+    jedis:
+      pool:
+      # 连接池中的最大空闲连接，默认值也是8。
+        max-idle: 500
+        # 连接池中的最小空闲连接，默认值也是0。
+        min-idle: 50
+          # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)
+        max-active: 1000
+          # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+        max-wait: 2000
+
+
+
 
 
   mail:
@@ -59,14 +87,16 @@ spring:
     suffix: .html  #后缀名
 
 
-#logging:
-#  level:
-#    root: DEBUG
-
 
 mybatis:
-
   type-aliases-package: com.msp.pojo
-
   mapper-locations: classpath:mapper/*.xml
+
+
+
+logging:
+  config: logback.xml
+  level:
+    com.itcodai.course03.dao: trace
+
 

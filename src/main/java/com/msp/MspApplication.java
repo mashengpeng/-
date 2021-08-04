@@ -9,6 +9,7 @@ public class MspApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MspApplication.class, args);
+//		System.out.println("http://localhost/test/log");
 	}
 
 }

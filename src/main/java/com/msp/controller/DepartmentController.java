@@ -1,6 +1,7 @@
 package com.msp.controller;
 
 import com.msp.pojo.Department;
+import com.msp.pojo.JsonResult;
 import com.msp.service.impl.DepartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,35 +18,35 @@ public class DepartmentController {
 
     // 查询全部部门
     @GetMapping("/getDepartments")
-    public List<Department> getDepartments(){
-        return departmentService.getDepartments();
+    public JsonResult<List> getDepartments(){
+        return new JsonResult<>(departmentService.getDepartments());
     }
 
     // 查询全部部门
     @GetMapping("/getDepartment/{id}")
-    public Department getDepartment(@PathVariable("id") Integer id){
-        return departmentService.getDepartment(id);
+    public JsonResult<Department> getDepartment(@PathVariable("id") Integer id){
+        return new JsonResult<>(departmentService.getDepartment(id));
     }
 
 
     @GetMapping("/insert/{id}/{departmentName}")
-    public List<Department> insert(@PathVariable("id") Integer id, @PathVariable("departmentName") String departmentName){
-        return departmentService.insert(id, departmentName);
+    public JsonResult<List> insert(@PathVariable("id") Integer id, @PathVariable("departmentName") String departmentName){
+        return new JsonResult<>(departmentService.insert(id, departmentName));
     }
 
     @GetMapping("/insert/{departmentName}")
-    public List<Department> insertWithName(@PathVariable("departmentName") String departmentName){
-        return departmentService.insertWithName(departmentName);
+    public JsonResult<List> insertWithName(@PathVariable("departmentName") String departmentName){
+        return new JsonResult<>(departmentService.insertWithName(departmentName));
     }
 
     @GetMapping("/delete/{id}")
-    public List<Department> delete(@PathVariable("id") Integer id){
-        return departmentService.delete(id);
+    public JsonResult<List> delete(@PathVariable("id") Integer id){
+        return new JsonResult<>(departmentService.delete(id));
     }
 
     @GetMapping("/deleteAll")
-    public List<Department> deleteAll(){
-        return departmentService.deleteAll();
+    public JsonResult<List> deleteAll(){
+        return new JsonResult<>(departmentService.deleteAll());
     }
 }
 

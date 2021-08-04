@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
+
 public interface EmployeeMapper {
 
     // 获取所有员工信息
